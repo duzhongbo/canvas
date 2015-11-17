@@ -21,11 +21,27 @@ Your browser does not support the HTML5 canvas tag.
  * arg[1]:在画布上放置图像的 x 坐标位置
  * arg[2]:在画布上放置图像的 y 坐标位置
 */ 
+// var c=document.getElementById("myCanvas");
+// var ctx=c.getContext("2d");
+// var img=document.getElementById("tulip");
+// img.onload=function(){
+// 	ctx.drawImage(img,10,10);
+// }
+
+
+/*
+ * 5个参数的用法
+ * arg[0]:规定要使用的图像、画布或视频
+ * arg[1]:在画布上放置图像的 x 坐标位置
+ * arg[2]:在画布上放置图像的 y 坐标位置
+ * arg[3]:要使用的图像的宽度。（伸展或缩小图像）
+ * arg[4]:要使用的图像的高度。（伸展或缩小图像）
+*/ 
 var c=document.getElementById("myCanvas");
 var ctx=c.getContext("2d");
 var img=document.getElementById("tulip");
 img.onload=function(){
-	ctx.drawImage(img,10,10);
+	ctx.drawImage(img,10,10,240,160);
 }
 
 
