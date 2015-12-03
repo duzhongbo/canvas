@@ -13,15 +13,30 @@ body{background-color:#ddd;}
 </style>
 
 
-<canvas id="canvas" width="600" height="300">
+<canvas id="canvas" width="600" height="500">
 Canvas not supported
 </canvas>
 
 <script type="text/javascript" src="js/base.js"></script>
 
 <script type="text/javascript">
-showTxt('Hello World!',canvas);
+// showTxt('Hello World!',canvas);
 
+// var context = canvas.getContext('2d');
+// context.lineJoin = 'round';
+// context.lineWidth = 30;
+
+// context.font = '24px Helvetica';
+// context.fillText('Click anywhere to erase',175,40);
+
+// context.strokeRect(75,100,200,200);
+// context.fillRect(325,100,200,200);
+
+// context.canvas.onmousedown = function(e){
+// 	context.clearRect(0,0,canvas.width,canvas.height);
+// };
+
+drawRect(100,10,10,canvas);
 
 </script>
 
