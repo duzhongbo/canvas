@@ -36,7 +36,7 @@ var context = canvas.getContext('2d'),
 // context.fillStyle = gradient;
 // context.fillRect(0,0,canvas.width,canvas.height);
 
-
+// 指定半径为10的小圆，半径为100的大圆.2个园的水平直径相连的区域，就是放射渐变区域
 gradient = context.createRadialGradient(canvas.width/2,canvas.height,10,canvas.width/2,0,100);
 gradient.addColorStop(0,'blue');// 数字是暗色中心位置，颜色从此中心向2方向渐变
 gradient.addColorStop(0.25,'white');
