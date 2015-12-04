@@ -8,21 +8,47 @@
 	
 
 <style type="text/css">
-body{background-color:#ddd;}
-#canvas{margin:10px;padding:10px;background-color:#fff;border:thin inset #aaa;}
+#canvas{background-color:#eee;border:thin solid cornflowerblue;}
+#radios{padding:10px;}
 </style>
 
+<div id="radios">
+	<input type="radio" id="repeatRadio" name="patternRadio" checked />repeat
+	<input type="radio" id="repeatXRadio" name="patternRadio" checked />repeat-x
+	<input type="radio" id="repeatYRadio" name="patternRadio" checked />repeat-Y
+	<input type="radio" id="noRepeatRadio" name="patternRadio" checked />no repeat
 
-<canvas id="canvas" width="600" height="500">
-Canvas not supported
+
+</div>
+
+<canvas id="canvas" width="450" height="275">
+	<canvas> not supported</canvas>
 </canvas>
 
-<script type="text/javascript" src="js/base.js"></script>
-
 <script type="text/javascript">
-createLinearGradient(canvas);
-// createRadialGradient(canvas)
+var context = canvas.getContext('2d'),image = new Image();
 
+function fillCanvasWithPattern(repeatString){
+	var pattern = context.createPattern(image,repeatString);
+	context.fillStyle = pattern;
+	context.fillRect(0,0,canvas.width,canvas.height);
+}
+repeatRadio.onclick = function(){
+	fillCanvasWithPattern('repeat');
+}
+repeatXRadio.onclick = function(){
+	fillCanvasWithPattern('repeat-x');
+}
+repeatYRadio.onclick = function(){
+	fillCanvasWithPattern('repeat-y');
+}
+noRepeatRadio.onclick = function(){
+	fillCanvasWithPattern('no-repeat');
+}
+image.src = 'img/1.png';
+image.onload = function(){
+	fillCanvasWithPattern('repeat');
+}
 </script>
 
 </body>
