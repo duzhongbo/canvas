@@ -21,9 +21,13 @@ Canvas not supported
 
 <script type="text/javascript">
 var context = canvas.getContext('2d'),
-gradient = context.createLinearGradient(0,0,canvas.width,0);
+// 4个参数是2组坐标，起始点和结束点
+// gradient = context.createLinearGradient(0,0,canvas.width,0);
+// gradient = context.createLinearGradient(0,0,0,canvas.height);
+// gradient = context.createLinearGradient(0,0,canvas.width,canvas.height);
+gradient = context.createLinearGradient(0,0,0,canvas.height/2);
 
-gradient.addColorStop(0,'blue');
+gradient.addColorStop(0,'blue');// 数字是暗色中心位置，颜色从此中心向2方向渐变
 gradient.addColorStop(0.25,'white');
 gradient.addColorStop(0.5,'purple');
 gradient.addColorStop(0.75,'red');
