@@ -128,6 +128,18 @@ function fillCircle(oCanvas,x,y,r){
     context.stroke(); // 绘制描边
     // context.fill();// 填充绘制
 }
+/*
+ * 功能：绘制路径
+*/
+function drawPath(aPath,oCanvas){
+    var context = oCanvas.getContext('2d');
+    context.beginPath();
+    context.moveTo(aPath[0].x, aPath[0].y);
+    for(var i=1,len=aPath.length;i<len;i++){
+        context.lineTo(aPath[i].x,aPath[i].y);
+    }
+    context.stroke();
+}
 /*16进制颜色转为RGB格式*/
 String.prototype.colorRgb = function(){
  	// 十六进制颜色值的正则表达式
