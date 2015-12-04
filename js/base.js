@@ -60,6 +60,47 @@ function fillStyle(sColor,oContext,alpha){
     }
     oContext.fillStyle=color;
 }
+/*
+ * 功能：绘制放射性渐变
+ *
+ *
+*/
+function createRadialGradient(oCanvas){
+   var context = oCanvas.getContext('2d'), 
+    // 指定半径为10的小圆，半径为100的大圆。2个园的水平直径相连的区域，就是放射渐变区域
+    gradient = context.createRadialGradient(oCanvas.width/2,oCanvas.height,10,oCanvas.width/2,0,100);
+    gradient.addColorStop(0,'blue');// 数字是暗色中心位置，颜色从此中心向2方向渐变
+    gradient.addColorStop(0.25,'white');
+    gradient.addColorStop(0.5,'purple');
+    gradient.addColorStop(0.75,'red');
+    gradient.addColorStop(1,'yellow');
+
+    context.fillStyle = gradient;
+    context.rect(0,0,oCanvas.width,oCanvas.height);
+    context.fill();
+}
+/*
+ * 功能：创建线性渐变
+ *
+ *
+*/
+function createLinearGradient(oCanvas){
+    var context = oCanvas.getContext('2d'),
+    // 4个参数是2组坐标，起始点和结束点
+    // gradient = context.createLinearGradient(0,0,oCanvas.width,0);
+    // gradient = context.createLinearGradient(0,0,0,oCanvas.height);
+    // gradient = context.createLinearGradient(0,0,oCanvas.width,oCanvas.height);
+    gradient = context.createLinearGradient(0,0,0,oCanvas.height/2);
+
+    gradient.addColorStop(0,'blue');// 数字是暗色中心位置，颜色从此中心向2方向渐变
+    gradient.addColorStop(0.25,'white');
+    gradient.addColorStop(0.5,'purple');
+    gradient.addColorStop(0.75,'red');
+    gradient.addColorStop(1,'yellow');
+
+    context.fillStyle = gradient;
+    context.fillRect(0,0,oCanvas.width,oCanvas.height);
+}
 /*16进制颜色转为RGB格式*/
 String.prototype.colorRgb = function(){
  	// 十六进制颜色值的正则表达式
