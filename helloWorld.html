@@ -20,15 +20,17 @@ Canvas not supported
 <script type="text/javascript" src="js/base.js"></script>
 
 <script type="text/javascript">
-// fillText('Hello World!',canvas);
-fillRect(100,10,10,canvas);
-// strokeRect(100,100,100,canvas);
+var context = canvas.getContext('2d'),
+gradient = context.createLinearGradient(0,0,canvas.width,0);
 
-// var context = canvas.getContext('2d');
+gradient.addColorStop(0,'blue');
+gradient.addColorStop(0.25,'white');
+gradient.addColorStop(0.5,'purple');
+gradient.addColorStop(0.75,'red');
+gradient.addColorStop(1,'yellow');
 
-// canvas.onmousedown = function(e){
-// 	clearRect(0,0,canvas.width,canvas.height,canvas)
-// };
+context.fillStyle = gradient;
+context.fillRect(0,0,canvas.width,canvas.height);
 
 </script>
 
