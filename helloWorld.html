@@ -21,12 +21,23 @@ Canvas not supported
 
 <script type="text/javascript">
 var context = canvas.getContext('2d'),
-// 4个参数是2组坐标，起始点和结束点
-// gradient = context.createLinearGradient(0,0,canvas.width,0);
-// gradient = context.createLinearGradient(0,0,0,canvas.height);
-// gradient = context.createLinearGradient(0,0,canvas.width,canvas.height);
-gradient = context.createLinearGradient(0,0,0,canvas.height/2);
+// // 4个参数是2组坐标，起始点和结束点
+// // gradient = context.createLinearGradient(0,0,canvas.width,0);
+// // gradient = context.createLinearGradient(0,0,0,canvas.height);
+// // gradient = context.createLinearGradient(0,0,canvas.width,canvas.height);
+// gradient = context.createLinearGradient(0,0,0,canvas.height/2);
 
+// gradient.addColorStop(0,'blue');// 数字是暗色中心位置，颜色从此中心向2方向渐变
+// gradient.addColorStop(0.25,'white');
+// gradient.addColorStop(0.5,'purple');
+// gradient.addColorStop(0.75,'red');
+// gradient.addColorStop(1,'yellow');
+
+// context.fillStyle = gradient;
+// context.fillRect(0,0,canvas.width,canvas.height);
+
+
+gradient = context.createRadialGradient(canvas.width/2,canvas.height,10,canvas.width/2,0,100);
 gradient.addColorStop(0,'blue');// 数字是暗色中心位置，颜色从此中心向2方向渐变
 gradient.addColorStop(0.25,'white');
 gradient.addColorStop(0.5,'purple');
@@ -34,8 +45,8 @@ gradient.addColorStop(0.75,'red');
 gradient.addColorStop(1,'yellow');
 
 context.fillStyle = gradient;
-context.fillRect(0,0,canvas.width,canvas.height);
-
+context.rect(0,0,canvas.width,canvas.height);
+context.fill();
 </script>
 
 </body>
