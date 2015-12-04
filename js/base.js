@@ -109,6 +109,16 @@ function fillImage(oCanvas,imgUrl,repeatModle){// repeat,repeat-x,repeat-y,no-re
         context.fillRect(0,0,oCanvas.width,oCanvas.height);
     }
 }
+/*
+ * 功能：设置外阴影
+*/
+function setShadow(oCanvas){
+   var context = oCanvas.getContext('2d');
+   context.shadowColor = 'rgba(0,0,0,0.7)';
+   context.shadowOffsetX = 1;
+   context.shadowOffsetY = 1;
+   context.shadowBlur = 2;
+}
 /*16进制颜色转为RGB格式*/
 String.prototype.colorRgb = function(){
  	// 十六进制颜色值的正则表达式
