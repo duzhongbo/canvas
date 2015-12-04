@@ -20,23 +20,17 @@ Canvas not supported
 <script type="text/javascript" src="js/base.js"></script>
 
 <script type="text/javascript">
-// showTxt('Hello World!',canvas);
+fillText('Hello World!',canvas);
+fillRect(100,10,10,canvas);
+strokeRect(100,100,100,canvas);
 
-// var context = canvas.getContext('2d');
-// context.lineJoin = 'round';
-// context.lineWidth = 30;
+var context = canvas.getContext('2d');
 
-// context.font = '24px Helvetica';
-// context.fillText('Click anywhere to erase',175,40);
+canvas.onmousedown = function(e){
+	clearRect(0,0,canvas.width,canvas.height,canvas)
+};
 
-// context.strokeRect(75,100,200,200);
-// context.fillRect(325,100,200,200);
 
-// context.canvas.onmousedown = function(e){
-// 	context.clearRect(0,0,canvas.width,canvas.height);
-// };
-
-drawRect(100,10,10,canvas);
 
 </script>
 
