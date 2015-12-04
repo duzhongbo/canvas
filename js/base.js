@@ -119,6 +119,15 @@ function setShadow(oCanvas){
    context.shadowOffsetY = 1;
    context.shadowBlur = 2;
 }
+/*
+ * 功能：在指定画布，指定位置，画指定半径的圆
+*/
+function fillCircle(oCanvas,x,y,r){
+    var context = oCanvas.getContext('2d');
+    context.arc(x, y, r, 0, Math.PI*2);
+    context.stroke(); // 绘制描边
+    // context.fill();// 填充绘制
+}
 /*16进制颜色转为RGB格式*/
 String.prototype.colorRgb = function(){
  	// 十六进制颜色值的正则表达式
