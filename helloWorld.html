@@ -25,30 +25,10 @@
 	<canvas> not supported</canvas>
 </canvas>
 
+<script type="text/javascript" src="js/base.js"></script>
 <script type="text/javascript">
-var context = canvas.getContext('2d'),image = new Image();
+fillImage(canvas,'img/1.png','repeat')
 
-function fillCanvasWithPattern(repeatString){
-	var pattern = context.createPattern(image,repeatString);
-	context.fillStyle = pattern;
-	context.fillRect(0,0,canvas.width,canvas.height);
-}
-repeatRadio.onclick = function(){
-	fillCanvasWithPattern('repeat');
-}
-repeatXRadio.onclick = function(){
-	fillCanvasWithPattern('repeat-x');
-}
-repeatYRadio.onclick = function(){
-	fillCanvasWithPattern('repeat-y');
-}
-noRepeatRadio.onclick = function(){
-	fillCanvasWithPattern('no-repeat');
-}
-image.src = 'img/1.png';
-image.onload = function(){
-	fillCanvasWithPattern('repeat');
-}
 </script>
 
 </body>

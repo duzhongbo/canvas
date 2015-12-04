@@ -62,8 +62,6 @@ function fillStyle(sColor,oContext,alpha){
 }
 /*
  * 功能：绘制放射性渐变
- *
- *
 */
 function createRadialGradient(oCanvas){
    var context = oCanvas.getContext('2d'), 
@@ -81,8 +79,6 @@ function createRadialGradient(oCanvas){
 }
 /*
  * 功能：创建线性渐变
- *
- *
 */
 function createLinearGradient(oCanvas){
     var context = oCanvas.getContext('2d'),
@@ -100,6 +96,18 @@ function createLinearGradient(oCanvas){
 
     context.fillStyle = gradient;
     context.fillRect(0,0,oCanvas.width,oCanvas.height);
+}
+/*
+ * 功能：用指定图片，填充指定画布
+*/
+function fillImage(oCanvas,imgUrl,repeatModle){// repeat,repeat-x,repeat-y,no-repeat
+    var context = oCanvas.getContext('2d'),image = new Image();
+    image.src = imgUrl;
+    image.onload=function(){
+        var pattern = context.createPattern(image,repeatModle);
+        context.fillStyle = pattern;
+        context.fillRect(0,0,oCanvas.width,oCanvas.height);
+    }
 }
 /*16进制颜色转为RGB格式*/
 String.prototype.colorRgb = function(){
