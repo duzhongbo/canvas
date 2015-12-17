@@ -25,7 +25,7 @@ window.onload=function(){
 	var oGC = c1.getContext('2d');
 	
 	oGC.moveTo(100,200);
-	oGC.arcTo(100,100,200,100,50);
+	oGC.quadraticCurveTo(100,100,200,100);// 第一组参数为控制点，第二组参数是结束点
 	oGC.stroke();
 
 }
