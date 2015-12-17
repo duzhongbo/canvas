@@ -24,9 +24,14 @@ span{color: #fff;}
 window.onload=function(){
 	var oGC = c1.getContext('2d');
 	
+	// oGC.moveTo(100,200);
+	// oGC.quadraticCurveTo(100,100,200,100);// 第一组参数为控制点，第二组参数是结束点
+	// oGC.stroke();
+
 	oGC.moveTo(100,200);
-	oGC.quadraticCurveTo(100,100,200,100);// 第一组参数为控制点，第二组参数是结束点
+	oGC.bezierCurveTo(100,100,200,200,200,100);// 前2组参数为控制点，最后一组组参数是结束点
 	oGC.stroke();
+
 
 }
 
