@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas</title>
+</head>
+<body>
+	
+
+<style type="text/css">
+body{background: #000;}
+canvas{background-color: #fff;}
+span{color: #fff;}
+
+</style>
+
+<!-- 默认宽300px，高150px -->
+<canvas id="c1" width="700" height="500">
+	<span>不支持canvas的浏览器</span>
+</canvas>
+
+<script type="text/javascript">
+window.onload=function(){
+	var oGC = c1.getContext('2d');
+	// oGC.fillStyle='red';
+	// oGC.strokeStyle='blue';
+	// oGC.lineWidth=10;
+	// // oGC.lineJoin = 'round';
+	// oGC.lineJoin = 'bevel';
+	
+	// oGC.fillRect(50,50,100,100);
+	// oGC.strokeRect(50.5,50.5,100,100);
+
+	oGC.save();
+
+	oGC.fillStyle='red';// 红色的填充作用到了下面所有的绘制中(除了路径绘画)
+	// 路径绘制
+	oGC.beginPath(); // 和closePath对应闭合绘画区间
+	oGC.moveTo(100,100);// 起始点
+	oGC.lineTo(200,200);// 
+	oGC.lineTo(300,200);// 
+	oGC.closePath();
+	// oGC.stroke();
+	oGC.fill();
+	oGC.restore();
+
+	oGC.beginPath();
+	oGC.moveTo(100,200);// 起始点
+	oGC.lineTo(200,300);// 
+	oGC.lineTo(300,300);// 
+	oGC.closePath();
+	oGC.fill();
+
+	oGC.beginPath();
+	oGC.rect(350,350,100,100)
+	oGC.closePath();
+	oGC.fill();
+
+	// oGC.clearRect(0,0,c1.width,c1.height);
+}
+
+
+</script>
+
+</body>
+</html>
