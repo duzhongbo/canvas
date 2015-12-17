@@ -35,6 +35,8 @@ window.onload=function(){
 		var oSen = oDate.getSeconds();
 
 		var oHoursValue = (-90+oHours*30) * Math.PI/180;// -90表示从绘制起点(3点钟方向)回到时针起点（12点钟方向）
+		var oMinValue = (-90+oMin*6) * Math.PI/180;
+		var oSenValue = (-90+oSen*6) * Math.PI/180;
 
 		// oGC.moveTo(x,y);
 
@@ -94,7 +96,7 @@ window.onload=function(){
 		oGC.lineWidth = 3;
 		oGC.beginPath();
 		oGC.moveTo(x,y);
-		oGC.arc(x,y,r*14/20,1,1,false);// 开始弧度和结束弧度相同就会画出一条线
+		oGC.arc(x,y,r*14/20,oMinValue,oMinValue,false);// 开始弧度和结束弧度相同就会画出一条线
 
 		oGC.closePath();
 		oGC.stroke();
@@ -103,7 +105,7 @@ window.onload=function(){
 		oGC.lineWidth = 1;
 		oGC.beginPath();
 		oGC.moveTo(x,y);
-		oGC.arc(x,y,r*19/20,2,2,false);// 开始弧度和结束弧度相同就会画出一条线
+		oGC.arc(x,y,r*19/20,oSenValue,oSenValue,false);// 开始弧度和结束弧度相同就会画出一条线
 
 		oGC.closePath();
 		oGC.stroke();
