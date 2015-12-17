@@ -29,6 +29,8 @@ window.onload=function(){
 		var y = 200;
 		var r = 150;
 
+		oGC.clearRect(0,0,c1.width,c1.height);
+
 		var oDate = new Date();
 		var oHours = oDate.getHours();
 		var oMin = oDate.getMinutes();
@@ -111,7 +113,12 @@ window.onload=function(){
 		oGC.stroke();
 
 	}
-	toDraw()
+
+	setInterval(function(){
+		toDraw();
+	},30)
+
+	toDraw();
 }
 </script>
 
