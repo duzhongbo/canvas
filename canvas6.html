@@ -28,9 +28,14 @@ window.onload=function(){
 	oGC.translate(100,100);
 	setInterval(function(){
 		num++;
+		oGC.save();
+
 		oGC.clearRect(0,0,c1.width,c1.height);
 		oGC.rotate(num*Math.PI/180);
-		oGC.fillRect(0,0,100,100)
+		oGC.translate(-50,-50);
+		oGC.fillRect(0,0,100,100);
+
+		oGC.restore();
 
 	},30)
 
