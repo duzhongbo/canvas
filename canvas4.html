@@ -74,6 +74,32 @@ window.onload=function(){
 		oGC.closePath();
 		oGC.fill();
 
+		// 绘制时针
+		oGC.lineWidth = 5;
+		oGC.beginPath();
+		oGC.moveTo(x,y);
+		oGC.arc(x,y,r*10/20,0,0,false);// 开始弧度和结束弧度相同就会画出一条线
+
+		oGC.closePath();
+		oGC.stroke();
+
+		// 绘制分针
+		oGC.lineWidth = 3;
+		oGC.beginPath();
+		oGC.moveTo(x,y);
+		oGC.arc(x,y,r*14/20,1,1,false);// 开始弧度和结束弧度相同就会画出一条线
+
+		oGC.closePath();
+		oGC.stroke();
+
+		// 绘制秒针
+		oGC.lineWidth = 1;
+		oGC.beginPath();
+		oGC.moveTo(x,y);
+		oGC.arc(x,y,r*19/20,2,2,false);// 开始弧度和结束弧度相同就会画出一条线
+
+		oGC.closePath();
+		oGC.stroke();
 
 	}
 	toDraw()
